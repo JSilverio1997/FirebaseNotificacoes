@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "763536889866",
+    "firebase_url": "https://fir-cursonotificacao-6af16.firebaseio.com",
+    "project_id": "fir-cursonotificacao-6af16",
+    "storage_bucket": "fir-cursonotificacao-6af16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763536889866:android:ea45beabe341e356fb27f3",
+        "android_client_info": {
+          "package_name": "com.example.firebasecursonotificacao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763536889866-iigg90gvml8f4id7jtagj3ski11tue76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebasecursonotificacao",
+            "certificate_hash": "99e1a5915f288c652161c6cfed6143d6c7be24fb"
+          }
+        },
+        {
+          "client_id": "763536889866-i1i9d9j70numtedloi65jbuvisvgq6ld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSOCh5jeiMMAP98h3NE1IfGVZLXpk7cOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763536889866-i1i9d9j70numtedloi65jbuvisvgq6ld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
