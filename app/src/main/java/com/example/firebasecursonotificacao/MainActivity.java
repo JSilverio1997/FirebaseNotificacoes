@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.IOException;
@@ -101,7 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.button_CadastrarToken:
-                obterToken();
+                obterToken2();
+                //obterToken();
                 break;
 
             case R.id.button_EnviarNotificacao:
@@ -240,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void obterToken()
     {
-       final String autorizacao = "763536889866";
+       final String autorizacao = "423037240842";
 
        final String firebase = "FCM";
 
@@ -250,6 +252,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 try
                 {
+                   FirebaseInstanceId.getInstance().deleteInstanceId(); // Remoção do Token
+
                    String token = FirebaseInstanceId.getInstance().getToken(autorizacao, firebase);
                    Log.d("TokenTeste2", token);
 
@@ -264,6 +268,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
 
         }
+    }
+
+    private void obterToken2()
+    {
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task)
+            {
+                boolean resultado = task.isSuccessful();
+
+                if(resultado)
+                {
+                    String token = task.getResult().toString();
+                }
+                else
+                {
+                    Toast.makeText(getBaseContext(), "Erro ao Tentar Obter o Token",
+                                   Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 
